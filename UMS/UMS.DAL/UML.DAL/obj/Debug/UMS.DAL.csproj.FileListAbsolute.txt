@@ -1,0 +1,6 @@
+F:\UMS\UMS.DAL\UML.DAL\bin\Debug\UML.DAL.dll.config
+F:\UMS\UMS.DAL\UML.DAL\bin\Debug\UML.DAL.dll
+F:\UMS\UMS.DAL\UML.DAL\bin\Debug\UML.DAL.pdb
+F:\UMS\UMS.DAL\UML.DAL\obj\Debug\UML.DAL.dll
+F:\UMS\UMS.DAL\UML.DAL\obj\Debug\UML.DAL.pdb
+F:\UMS\UMS.DAL\UML.DAL\obj\Debug\UMS.DAL.csprojResolveAssemblyReference.cache

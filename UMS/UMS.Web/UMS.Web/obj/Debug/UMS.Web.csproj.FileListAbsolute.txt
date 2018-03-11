@@ -1,0 +1,11 @@
+F:\UMS\UMS.Web\UMS.Web\bin\UMS.Web.dll.config
+F:\UMS\UMS.Web\UMS.Web\bin\UMS.Web.dll
+F:\UMS\UMS.Web\UMS.Web\bin\UMS.Web.pdb
+F:\UMS\UMS.Web\UMS.Web\obj\Debug\UMS.Web.csprojResolveAssemblyReference.cache
+F:\UMS\UMS.Web\UMS.Web\obj\Debug\UMS.Web.dll
+F:\UMS\UMS.Web\UMS.Web\obj\Debug\UMS.Web.pdb
+C:\Users\Yalisai\Downloads\UMS\UMS\UMS.Web\UMS.Web\bin\UMS.Web.dll
+C:\Users\Yalisai\Downloads\UMS\UMS\UMS.Web\UMS.Web\bin\UMS.Web.pdb
+C:\Users\Yalisai\Downloads\UMS\UMS\UMS.Web\UMS.Web\obj\Debug\UMS.Web.csprojResolveAssemblyReference.cache
+C:\Users\Yalisai\Downloads\UMS\UMS\UMS.Web\UMS.Web\obj\Debug\UMS.Web.dll
+C:\Users\Yalisai\Downloads\UMS\UMS\UMS.Web\UMS.Web\obj\Debug\UMS.Web.pdb

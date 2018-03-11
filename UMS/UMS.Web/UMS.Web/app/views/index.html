@@ -1,0 +1,59 @@
+﻿
+<div class="container">
+    <h3>{{$root.currentPage}}</h3>
+    <table class="table table-bordered table-hover" style="width:900px;" align="center">
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>User Name</th>
+            <th>Age</th>
+            <th>Passwordexpires</th>
+            <!--<th>User Name</th>
+            <th>Age</th>
+            <th>Date of Birth</th>-->
+        </tr>
+        <tr ng-show="users.length">
+            <td></td>
+            <td>
+                <input type="text" data-ng-model="search.firstname" />
+            </td>
+            <td>
+                <input type="text" data-ng-model="search.username" />
+            </td>
+            <td>
+                <input type="text" data-ng-model="search.age" />
+            </td>
+            <td>
+                <input type="text" data-ng-model="search.passwordexpires" />
+            </td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="user in users | filter:search">
+            <td>
+                {{$index + 1}}
+                <!--{{user.userid}}-->
+            </td>
+            <td>
+                {{user.firstname}}
+            </td>
+            <td>
+                {{user.username}}
+            </td>
+            <td>
+                {{user.age}}
+            </td>
+            <td>
+                {{user.passwordexpires}}
+            </td>
+            <td>
+                <a href="#edituser/{{user.userid}}">Edit</a>|<a href="#delete/{{user.userid}}">Delete</a>
+            </td>
+        </tr>
+        <tr ng-if="users.length==0">
+            <td colspan="5">No Records Found. Please add user <a href="#adduser"><i class="fa fa-comment"></i>Add </a></td>
+        </tr>
+
+
+    </table>
+</div>
+

@@ -1,0 +1,92 @@
+﻿
+<script>
+    $(document).ready(function () {
+        $(".clsdate").datepicker({ dateFormat: 'yy-mm-dd' });;
+    });
+</script>
+
+<div class="container">
+    <h3>{{$root.currentPage}}</h3>
+
+    <form name="userForm" ng-submit="submitForm()" class="form-horizontal" novalidate>
+        <fieldset class="form-group" ng-class="{'has-error':userForm.firstname.$invalid && (userForm.firstname.$dirty || submitted)}">
+            <label for="txtfirstname" class="col-sm-3">First Name</label>
+            <div class="col-sm-9">
+                <input type="text" name="firstname" ng-required="true" class="form-control" id="txtfirstname" ng-minlength="3" ng-maxlength="10" ng-model="newUser.firstname" placeholder="Enter First Name" />
+                <p ng-show="userForm.firstname.$error.required && (userForm.firstname.$dirty||submitted)" class="help-block">First name required</p>
+                <input type="hidden" ng-model="newUser.userid" />
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="txtlastname" class="col-sm-3">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" name="lastname" class="form-control" id="txtlastname" ng-model="newUser.lastname" placeholder="Enter Last Name" />
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group" ng-class="{'has-error':userForm.username.$invalid && (userForm.username.$dirty || submitted)}">
+            <label for="txtusername" class="col-sm-3">User Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="username" ng-required="true" id="txtusername" ng-minlength="3" ng-maxlength="10" ng-model="newUser.username" placeholder="Enter User Name" />
+                <p ng-show="userForm.username.$error.required && (userForm.username.$dirty||submitted)" class="help-block">User name required.</p>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group" ng-class="{'has-error':userForm.password.$invalid && (userForm.password.$dirty || submitted)}">
+            <label for="txtpassword" class="col-sm-3">Password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="txtpassword" name="password" ng-required="true" ng-model="newUser.password" placeholder="Enter Password" />
+                <p ng-show="userForm.password.$error.required && (userForm.password.$dirty || submitted)" class="help-block">Password required.</p>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group" ng-class="{ 'has-error' : userForm.confirmpassword.$invalid && (userForm.confirmpassword.$dirty || submitted)}">
+            <label for="txtconfirmpass" class="col-sm-3">Confirm Password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="txtconfirmpass" name="confirmpassword" ng-required="true" ng-model="newUser.confirmpassword" placeholder="Confirm your password" ng-compare="password" />
+                <p ng-show="userForm.confirmpassword.$error.required &&(userForm.confirmpassword.$dirty||submitted)" class="help-block">Your confirm password is required.</p>
+                <p ng-show="userForm.confirmpassword.$error.compare &&(userForm.confirmpassword.$dirty||submitted)" class="help-block">Confirm passwod doesnot match.</p>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group" ng-class="{'has-error':userForm.age.$invalid &&(userForm.age.$dirty||submitted) }">
+            <label for="txtage" class="col-sm-3">Age</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" id="txtage" ng-model="newUser.age" ng-minlength="1" ng-maxlength="3" placeholder="Enter age" name="age" ng-required="true" />
+                <p ng-show="userForm.age.$error.required &&(userForm.age.$dirty||submitted)" class="help-block">Age required.</p>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group" ng-class="{'has-error':userForm.dateofbirth.$invalid &&(userForm.dateofbirth.$dirty||submitted) }">
+            <label for="txtdateofbirth" class="col-sm-3">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control clsdate" id="txtdateofbirth" ng-model="newUser.dateofbirth" name="dateofbirth" ng-required="true" placeholder="Enter date of birth" />
+                <p ng-show="userForm.dateofbirth.$error.required &&(userForm.dateofbirth.$dirty||submitted)" class="help-block">Date of birth required.</p>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group" ng-class="{ 'has-error' : userForm.preferredlanguage.$invalid && (userForm.preferredlanguage.$dirty || submitted)}">
+            <label for=" ddlpreferredlangualge" class="col-sm-3">
+                Prefereed Language
+            </label>
+            <div class="col-sm-9">
+                <select class="form-control" id="ddlpreferredlangualge" ng-model="newUser.preferredlanguage" name="preferredlanguage" ng-required="true">
+                    <option ng-repeat="language in preferredlanguages" ng-selected="newUser.preferredlanguage==language.Id" value="{{language.Id}}">{{language.Name}}</option>
+                </select>
+
+                <p ng-show="userForm.preferredlanguage.$error.required &&(userForm.preferredlanguage.$dirty||submitted)" class="help-block">Preferred language required</p>
+            </div>
+        </fieldset>
+
+        <div class="checkbox" ng-class="{ 'has-error' : userForm.passwordexpires.$invalid && (userForm.passwordexpires.$dirty || submitted)}">
+            <label>
+                <input type="checkbox" ng-model="newUser.passwordexpires" ng-required="true" name="passwordexpires" />Password Expires
+            </label>
+            <p ng-show="userForm.passwordexpires.$error.required &&(userForm.passwordexpires.$dirty||submitted)" class="help-block">Password expires required</p>
+        </div>
+        <br />
+        <button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>
+        <!--ng-click="save()"-->
+    </form>
+</div>
